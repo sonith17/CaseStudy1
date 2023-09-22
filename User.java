@@ -36,8 +36,8 @@ public class User
                         Vehicle B[] = new Vehicle[4];
                         B[0]= new Bike(Name);
                         B[1]= new Car(Name);
-                        B[3]= new Truck(Name);
-                        B[2]= new ElectricCar(Name);
+                        B[2]= new Truck(Name);
+                        B[3]= new ElectricCar(Name);
                         M.F[FloorNumber].DisplayEntries();
                         int x3 = S.nextInt()-1;
                         M.F[FloorNumber].en[x3].IsEmpty= false;
@@ -59,7 +59,7 @@ public class User
                             {
                                System.out.println("Enter units of charge required: ");
                                int z1=S.nextInt();
-                               B.ChargeVehicle(z1,F[x2].getCostperUnitCharge());
+                               B[3].ChargeVehicle(z1,F[x2].getCostperUnitCharge());
                             }
                         }
                         int slot = M.F[FloorNumber].AllocateParkingLot(B[ChoiceOfVehicle-1]);
