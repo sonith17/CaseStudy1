@@ -8,8 +8,5 @@ public class ElectricCar extends Vehicle {
         this.OwnerName=OwnerName;
         this.IsFeePayed=false;
     }
-    void ChargeVehicle(int z1,int c)
-    {
-        this.BillPayed -= (long)z1*c;
-    }
+    
 }
