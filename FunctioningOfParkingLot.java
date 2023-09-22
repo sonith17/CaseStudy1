@@ -59,6 +59,7 @@ public class FunctioningOfParkingLot {
                     ChooseVehicle();
                     if(x==1)
                     {
+                        System.out.println("Enter Choice of Vehicle and Floor Number Respectively");
                         int ChoiceOfVehicle = S2.nextInt(),FloorNumber=S2.nextInt();
                         U.Enter(M, FloorNumber-1, ChoiceOfVehicle);
                     }
