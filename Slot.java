@@ -22,4 +22,8 @@ public class Slot
         this.RemainingSpace+=VehicleSpace;
         this.IsSlotEmpty=true;
     }
+    void SlotStatusSetter(boolean Status)
+    {
+        this.IsSlotEmpty = Status;
+    }
 }
