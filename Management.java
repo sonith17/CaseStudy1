@@ -20,8 +20,8 @@ public class Management
     }
     void ManageSlots(int FloorNumber,int SlotId,boolean SlotStatus)
     {
-        int xcordinate = --SlotId/(F[FloorNumber].s[0].length);
-        int ycordinate =SlotId%(F[FloorNumber].s[0].length);
-        F[FloorNumber].s[xcordinate][ycordinate].SlotStatusSetter(SlotStatus);
+        int xcordinate = --SlotId/(F[FloorNumber-1].s[0].length);
+        int ycordinate =SlotId%(F[FloorNumber-1].s[0].length);
+        F[FloorNumber-1].s[xcordinate][ycordinate].SlotStatusSetter(SlotStatus);
     }
 }
