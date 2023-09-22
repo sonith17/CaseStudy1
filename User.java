@@ -51,6 +51,17 @@ public class User
                         }
                         M.F[FloorNumber].en[x3].AssignInTime(B[ChoiceOfVehicle-1]);
                         M.F[FloorNumber].DisplaySlots();
+                        if(ChoiceOfVehicle==4)
+                        {
+                            System.out.println("Enter 1 to Charge vehicle or anthing else if not neede");
+                            int r=S.nextInt();
+                            if(r==1)
+                            {
+                               System.out.println("Enter units of charge required: ");
+                               int z1=S.nextInt();
+                               B.ChargeVehicle(z1,F[x2].getCostperUnitCharge());
+                            }
+                        }
                         int slot = M.F[FloorNumber].AllocateParkingLot(B[ChoiceOfVehicle-1]);
                         int xcordinate = --slot/(M.F[FloorNumber].s[0].length);
                         int ycordinate =slot%(M.F[FloorNumber].s[0].length);
