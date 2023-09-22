@@ -18,5 +18,9 @@ abstract public class Vehicle
     {
         return VehicleSpace;
     }
+    void ChargeVehicle(int z1,int c)
+    {
+        this.BillPayed -= (long)z1*c;
+    }
 }
 // what about payment options?
