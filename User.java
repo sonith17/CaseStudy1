@@ -59,7 +59,7 @@ public class User
                             {
                                System.out.println("Enter units of charge required: ");
                                int z1=S.nextInt();
-                               B[3].ChargeVehicle(z1,F[x2].getCostperUnitCharge());
+                               B[3].ChargeVehicle(z1,F[FloorNumber].getCostperUnitCharge());
                             }
                         }
                         int slot = M.F[FloorNumber].AllocateParkingLot(B[ChoiceOfVehicle-1]);
