@@ -2,7 +2,7 @@ package caseStudyV1_1;
 
 abstract public class Vehicle
 {
-    int VehicleSpace;
+    protected int VehicleSpace;
     int AllocatedParkingLot;
     long InTime;
     long OutTime;

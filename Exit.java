@@ -26,6 +26,7 @@ public class Exit extends Entries_Exits
     {
         v.OutTime = System.currentTimeMillis();
     }
+    @Override
     void PaymentOptions()
     {
         System.out.println(" 1 To Card ");

@@ -17,7 +17,8 @@ public class Entry extends Entries_Exits
             return;
         }
     }
-    void prePaymentOptions()
+    @Overrride
+    void PaymentOptions()
     {
         System.out.println(" 1 To Card ");
         System.out.println(" 2 To attendant ");

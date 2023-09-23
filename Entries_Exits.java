@@ -1,6 +1,6 @@
 package caseStudyV1_1;
 
-public abstract class Entries_Exits
+ abstract class Entries_Exits
 {
     int id;
     boolean IsEmpty;
@@ -10,5 +10,6 @@ public abstract class Entries_Exits
         this.id = id;
         this.IsEmpty = IsEmpty;
     }
+    abstract void PaymentOptions();
 }
 

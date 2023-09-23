@@ -2,6 +2,7 @@ package caseStudyV1_1;
 import java.util.*;
 
 public class FunctioningOfParkingLot {
+    abstract void print();
 
     public static void PreliminaryInstructions()
     {
