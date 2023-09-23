@@ -41,7 +41,7 @@ public class User
                         M.F[FloorNumber].DisplayEntries();
                         int x3 = S.nextInt()-1;
                         M.F[FloorNumber].en[x3].IsEmpty= false;
-                        M.F[FloorNumber].en[x3].prePaymentOptions();
+                        M.F[FloorNumber].en[x3].PaymentOptions();
                         int x4 = S.nextInt();
                         if(x4!= -1)
                         {
