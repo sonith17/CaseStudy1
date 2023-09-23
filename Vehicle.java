@@ -3,24 +3,24 @@ package caseStudyV1_1;
 abstract public class Vehicle
 {
     protected int VehicleSpace;
-    int AllocatedParkingLot;
-    long InTime;
-    long OutTime;
-    long BillPayed;
-    boolean IsFeePayed;
-    String OwnerName;
-    String PaymentMethod;
-    void PayFee()
+    public int AllocatedParkingLot;
+    public long InTime;
+    public long OutTime;
+    protected long BillPayed;
+    public boolean IsFeePayed;
+    protected String OwnerName;
+    protected String PaymentMethod;
+    protected void PayFee()
     {
         IsFeePayed = true;
     }
-    int getVehicleSpace()
+    public int getVehicleSpace()
     {
         return VehicleSpace;
     }
-    void ChargeVehicle(int z1,int c)
+    public void ChargeVehicle(int z1,int c)
     {
         this.BillPayed -= (long)z1*c;
     }
 }
-// what about payment options?
+

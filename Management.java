@@ -5,7 +5,7 @@ public class Management
 {
     Floor F[];
     LinkedList<Vehicle> ListVehicles;
-    Management(int NoOfFloors)
+    public Management(int NoOfFloors)
     {
         ListVehicles = new LinkedList<>();
         this.F= new Floor[NoOfFloors];
@@ -18,7 +18,7 @@ public class Management
  //           S1.close();
         }
     }
-    void ManageSlots(int FloorNumber,int SlotId,boolean SlotStatus)
+   protected void ManageSlots(int FloorNumber,int SlotId,boolean SlotStatus)
     {
         int xcordinate = --SlotId/(F[FloorNumber-1].s[0].length);
         int ycordinate =SlotId%(F[FloorNumber-1].s[0].length);

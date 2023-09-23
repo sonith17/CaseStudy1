@@ -2,27 +2,27 @@ package caseStudyV1_1;
 
 public class Slot
 {
-    boolean IsSlotEmpty;
+   protected boolean IsSlotEmpty;
     private int SlotIdX;
-    int SlotSpace;
-    int RemainingSpace;
-    Slot(int SlotIdX, boolean IsSlotEmpty, int SlotSpace)
+    public int SlotSpace;
+    public int RemainingSpace;
+    public Slot(int SlotIdX, boolean IsSlotEmpty, int SlotSpace)
     {
         this.IsSlotEmpty = IsSlotEmpty;
         this.SlotIdX = SlotIdX;
         this.SlotSpace = SlotSpace;
         this.RemainingSpace=SlotSpace;
     }
-    int getSlotId()
+    public int getSlotId()
     {
         return SlotIdX;
     }
-    void MakeSlotFree(int VehicleSpace)
+    protected void MakeSlotFree(int VehicleSpace)
     {
         this.RemainingSpace+=VehicleSpace;
         this.IsSlotEmpty=true;
     }
-    void SlotStatusSetter(boolean Status)
+    public void SlotStatusSetter(boolean Status)
     {
         this.IsSlotEmpty = Status;
     }

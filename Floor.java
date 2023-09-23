@@ -7,8 +7,8 @@ public class Floor
     Slot s[][];
     Entry en[];
     Exit ex[];
-    boolean IsFloorEmpty;
-    int cost;
+    public boolean IsFloorEmpty;
+    public int cost;
     private Scanner s1;
     private int costPerUnitCharge;
     Floor(int NoOfSlotsX,int NoOfSlotsY,int NoOfEntries,int NoOfExits, int cost,int NoOfCars,int NoOfBikes,int NoOfTrucks,int costPerUnitCharge)
@@ -95,7 +95,7 @@ public class Floor
         }
         System.out.println();
     }
-    int  AllocateParkingLot(Vehicle v)
+    protected int  AllocateParkingLot(Vehicle v)
     {
         if(this.IsFloorEmpty)
         {
@@ -129,7 +129,7 @@ public class Floor
 
         return -1;
     }
-    boolean CheckFloorEmpty()
+    public boolean CheckFloorEmpty()
     {
         boolean ReturnValue = false;
         for(int i=0;i<this.s.length;i++)

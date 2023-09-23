@@ -6,7 +6,7 @@ public class Exit extends Entries_Exits
     {
         super(id, IsEmpty);
     }
-    void CheckPayment(Vehicle v, int cost)
+    protected void CheckPayment(Vehicle v, int cost)
     {
         if(v.IsFeePayed)
         {
@@ -22,17 +22,17 @@ public class Exit extends Entries_Exits
             return;
         }
     }
-    void AssignOutTime(Vehicle v)
+    public void AssignOutTime(Vehicle v)
     {
         v.OutTime = System.currentTimeMillis();
     }
     @Override
-    void PaymentOptions()
+    public void PaymentOptions()
     {
         System.out.println(" 1 To Card ");
         System.out.println(" 2 To attendant ");
     }
-    long GenerateBill(long time,int cost)
+    public long GenerateBill(long time,int cost)
     {
         long Bill=0;
         System.out.println(time);

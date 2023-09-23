@@ -6,7 +6,7 @@ public class Entry extends Entries_Exits
     {
         super(id, IsEmpty);
     }
-    void CheckPayment(Vehicle v,int cost)
+    public void CheckPayment(Vehicle v,int cost)
     {
         if(v.IsFeePayed)
         {
@@ -18,18 +18,18 @@ public class Entry extends Entries_Exits
         }
     }
     @Override
-    void PaymentOptions()
+    public void PaymentOptions()
     {
         System.out.println(" 1 To Card ");
         System.out.println(" 2 To attendant ");
         System.out.println(" 3 To Portal ");
         System.out.println(" -1 at exit ");
     }
-    void PrePayment(long Advance,Vehicle V)
+   public void PrePayment(long Advance,Vehicle V)
     {
         V.BillPayed=Advance;
     }
-    void AssignInTime(Vehicle v)
+    public void AssignInTime(Vehicle v)
     {
         v.InTime = System.currentTimeMillis();
     }

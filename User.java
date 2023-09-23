@@ -7,26 +7,26 @@ public class User
     private String VehicleName;
     private String PlateNumber;
 
-    void VehicleNameSetter(String VehicleName)
+    public void VehicleNameSetter(String VehicleName)
     {
         this.VehicleName = VehicleName;
     }
 
-    String VehicleNameGetter()
+    public String VehicleNameGetter()
     {
         return this.VehicleName;
     }
-    void PlateNumberSetter(String PlateNumber)
+    public void PlateNumberSetter(String PlateNumber)
     {
         this.PlateNumber = PlateNumber;
     }
 
-    String PlateNumberGetter()
+    public String PlateNumberGetter()
     {
         return this.PlateNumber;
     }
     
-    void Enter(Management M, int FloorNumber,int ChoiceOfVehicle)
+    protected void Enter(Management M, int FloorNumber,int ChoiceOfVehicle)
     {
         Scanner S = new Scanner(System.in);
         if(M.F[FloorNumber].CheckFloorEmpty())
@@ -39,19 +39,19 @@ public class User
                         B[2]= new Truck(Name);
                         B[3]= new ElectricCar(Name);
                         M.F[FloorNumber].DisplayEntries();
-                        int x3 = S.nextInt()-1;
+                        int x3 = S.nextInt()-1;      //taking entry number
                         M.F[FloorNumber].en[x3].IsEmpty= false;
                         M.F[FloorNumber].en[x3].PaymentOptions();
-                        int x4 = S.nextInt();
+                        int x4 = S.nextInt();// asking for pre payment
                         if(x4!= -1)
                         {
                             System.out.println(" Enter Advance You wish To pay ");
                             int Advance = S.nextInt();
                             M.F[FloorNumber].en[x3].PrePayment(Advance, B[ChoiceOfVehicle-1]);
                         }
-                        M.F[FloorNumber].en[x3].AssignInTime(B[ChoiceOfVehicle-1]);
-                        M.F[FloorNumber].DisplaySlots();
-                        if(ChoiceOfVehicle==4)
+                        M.F[FloorNumber].en[x3].AssignInTime(B[ChoiceOfVehicle-1]);// assign in time
+                        M.F[FloorNumber].DisplaySlots();// displaying slots
+                        if(ChoiceOfVehicle==4)// if electric vehicle ask for charge
                         {
                             System.out.println("Enter 1 to Charge vehicle or anthing else if not neede");
                             int r=S.nextInt();
@@ -62,22 +62,22 @@ public class User
                                B[3].ChargeVehicle(z1,M.F[FloorNumber].getCostperUnitCharge());
                             }
                         }
-                        int slot = M.F[FloorNumber].AllocateParkingLot(B[ChoiceOfVehicle-1]);
+                        int slot = M.F[FloorNumber].AllocateParkingLot(B[ChoiceOfVehicle-1]);// function for alloactinf slot and getting Slot Id
                         int xcordinate = --slot/(M.F[FloorNumber].s[0].length);
                         int ycordinate =slot%(M.F[FloorNumber].s[0].length);
-                        M.F[FloorNumber].s[xcordinate][ycordinate].RemainingSpace-=1;
-                        if(M.F[FloorNumber].s[xcordinate][ycordinate].RemainingSpace==0)
+                        M.F[FloorNumber].s[xcordinate][ycordinate].RemainingSpace-=1;// updating space occupied
+                        if(M.F[FloorNumber].s[xcordinate][ycordinate].RemainingSpace==0)// makig boolean false
                         {
                             M.F[FloorNumber].s[xcordinate][ycordinate].IsSlotEmpty=false;
                         }
                         M.F[FloorNumber].en[x3].IsEmpty= true;
-                        M.ListVehicles.add(B[ChoiceOfVehicle-1]);
+                        M.ListVehicles.add(B[ChoiceOfVehicle-1]);// adding vehicles to list 
                     }
         else{System.out.println("Floor is full choose again");}
  //       S.close();
     }
 
-    void Exit(Management M,int ChoiceOfVehicle)
+    protected void Exit(Management M,int ChoiceOfVehicle)
     {
         Scanner S11 = new Scanner(System.in);
         System.out.println(" Enter The Floor you Parked Your Vehicle");
@@ -120,10 +120,10 @@ public class User
                         M.F[x2].ex[x3].IsEmpty=false;
                         M.F[x2].ex[x3].AssignOutTime(M.ListVehicles.get(VehicleIdInList));
                         slot = M.ListVehicles.get(VehicleIdInList).AllocatedParkingLot;
-                        int xcordinate = --slot/(M.F[x2].s[0].length);
+                        int xcordinate = --slot/(M.F[x2].s[0].length); // calculating array indicies from slot
                         int ycordinate =slot%(M.F[x2].s[0].length);
                         M.F[x2].s[xcordinate][ycordinate].MakeSlotFree(1);
-                        M.F[x2].ex[x3].CheckPayment(M.ListVehicles.get(VehicleIdInList),M.F[x2].cost);
+                        M.F[x2].ex[x3].CheckPayment(M.ListVehicles.get(VehicleIdInList),M.F[x2].cost);// checking and paying bill
                         M.F[x2].ex[x3].PaymentOptions();
                         int x4 =S11.nextInt();
                         while(x4!=1&& x4!=2)
