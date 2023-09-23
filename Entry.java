@@ -17,7 +17,7 @@ public class Entry extends Entries_Exits
             return;
         }
     }
-    @Overrride
+    @Override
     void PaymentOptions()
     {
         System.out.println(" 1 To Card ");
